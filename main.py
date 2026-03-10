@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, Body
 import oracledb
 import json
+import os
 from typing import List, Dict, Any
 from pydantic import BaseModel
 
@@ -10,12 +11,12 @@ class SQLQuery(BaseModel):
     """Request body model for SQL query"""
     inquiry_sql: str
 
-# Oracle Database Configuration
-DB_HOST = "localhost"
-DB_PORT = 1521
-DB_SERVICE = "FREEPDB1"
-DB_USER = "scm"
-DB_PASSWORD = "scm123"
+# Oracle Database Configuration (using environment variables)
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_PORT = int(os.getenv("DB_PORT", 1521))
+DB_SERVICE = os.getenv("DB_SERVICE", "FREEPDB1")
+DB_USER = os.getenv("DB_USER", "scm")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "scm123")
 
 def get_db_connection():
     """Establish connection to Oracle database"""
