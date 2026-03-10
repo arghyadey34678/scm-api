@@ -14,7 +14,7 @@ class SQLQuery(BaseModel):
 # Oracle Database Configuration (using environment variables)
 DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_PORT = int(os.getenv("DB_PORT", 1521))
-DB_SERVICE = os.getenv("DB_SERVICE", "FREEPDB1")
+DB_SERVICE = os.getenv("DB_SERVICE", "XE")
 DB_USER = os.getenv("DB_USER", "scm")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "scm123")
 
