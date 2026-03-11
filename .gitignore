@@ -40,3 +40,8 @@ Thumbs.db
 # Environment variables
 .env
 .env.local
+# Log files
+*.log
+
+# Temporary SQL fix files
+fix_*.sql
